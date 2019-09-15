@@ -3,6 +3,8 @@
 <p align="center">
   <a href="https://github.com/crazy-max/echo-ipfilter/actions"><img src="https://github.com/crazy-max/echo-ipfilter/workflows/build/badge.svg" alt="Build Status"></a>
   <a href="https://goreportcard.com/report/github.com/crazy-max/echo-ipfilter"><img src="https://goreportcard.com/badge/github.com/crazy-max/echo-ipfilter?style=flat-square" alt="Go Report"></a>
+  <a href="https://www.codacy.com/app/crazy-max/echo-ipfilter"><img src="https://img.shields.io/codacy/grade/99e6d0f21bd6475187823203da6fce63/master.svg?style=flat-square" alt="Code Quality"></a>
+  <a href="https://codecov.io/gh/crazy-max/echo-ipfilter"><img src="https://img.shields.io/codecov/c/github/crazy-max/echo-ipfilter/master.svg?style=flat-square" alt="Codecov"></a>
   <a href="https://www.patreon.com/crazymax"><img src="https://img.shields.io/badge/donate-patreon-f96854.svg?logo=patreon&style=flat-square" alt="Support me on Patreon"></a>
   <a href="https://www.paypal.me/crazyws"><img src="https://img.shields.io/badge/donate-paypal-00457c.svg?logo=paypal&style=flat-square" alt="Donate Paypal"></a>
 </p>
