@@ -26,7 +26,7 @@ type Config struct {
 	BlockByDefault bool
 }
 
-// var DefaultConfig = IPFilterConfig{ is the default IPFilter middleware config config.
+// DefaultConfig is the default IPFilter middleware config
 var DefaultConfig = Config{
 	Skipper:        middleware.DefaultSkipper,
 	BlockByDefault: false,
