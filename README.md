@@ -1,4 +1,4 @@
-<p align="center"><img width="100" src=".res/echo-ipfilter.png"></p>
+<p align="center"><img width="156" src=".res/echo-ipfilter.png"></p>
 
 <p align="center">
   <a href="https://github.com/crazy-max/echo-ipfilter/actions"><img src="https://github.com/crazy-max/echo-ipfilter/workflows/build/badge.svg" alt="Build Status"></a>
@@ -9,7 +9,7 @@
 
 ## About
 
-[echo](https://echo.labstack.com) IPFilter middleware backed by [jpillora/ipfilter](https://github.com/jpillora/ipfilter).
+Middleware that provides ipfilter support for [echo](https://echo.labstack.com) framework backed by [jpillora/ipfilter](https://github.com/jpillora/ipfilter).
 
 ## Installation
 
