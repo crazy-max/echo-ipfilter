@@ -17,9 +17,15 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+      GOPROXY: https://goproxy.io
     strategy:
       matrix:
-        go: [1.11.x, 1.12.x, 1.13.x]
+        go:
+          - 1.11.x
+          - 1.12.x
+          - 1.13.x
     steps:
       -
         # https://github.com/actions/setup-go
@@ -28,15 +34,21 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
       -
+        name: Cache Go modules
+        uses: actions/cache@preview
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+      -
         # https://github.com/actions/checkout
         name: Checkout
         uses: actions/checkout@v1
       -
         name: Test
-        env:
-          GO111MODULE: on
-          GOPROXY: https://goproxy.io
         run: |
+          go env
           go test -coverprofile=coverage.txt -covermode=atomic ./...
       -
         # https://github.com/codecov/codecov-action
