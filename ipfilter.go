@@ -52,7 +52,7 @@ func MiddlewareWithConfig(config Config) echo.MiddlewareFunc {
 		BlockedIPs:     config.BlackList,
 		BlockByDefault: config.BlockByDefault,
 		Logger:         nil,
-		IPDBNoFetch:    true,
+		IPDBFetchURL:   "https://web.archive.org/web/20191227182209if_/https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz",
 	})
 	if err != nil {
 		panic(err)

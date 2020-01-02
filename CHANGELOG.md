@@ -2,7 +2,7 @@
 
 ## 1.2.0 (2020/01/02) 
 
-* Disable automatic fetch of GeoLite2 (jpillora/ipfilter#11)
+* Update URL of GeoLite2-Country.mmdb (jpillora/ipfilter#11)
 
 ## 1.1.0 (2019/12/05)
 
