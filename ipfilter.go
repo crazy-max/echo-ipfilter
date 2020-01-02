@@ -52,6 +52,7 @@ func MiddlewareWithConfig(config Config) echo.MiddlewareFunc {
 		BlockedIPs:     config.BlackList,
 		BlockByDefault: config.BlockByDefault,
 		Logger:         nil,
+		IPDBNoFetch:    true,
 	})
 	if err != nil {
 		panic(err)
