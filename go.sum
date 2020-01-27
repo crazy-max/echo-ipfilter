@@ -4,10 +4,6 @@ github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumC
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/jpillora/ipfilter v1.0.0 h1:iOdQcx4MEesxmU9IjOZ/yPlXAHpvX/NgG9QUNr8TOpc=
 github.com/jpillora/ipfilter v1.0.0/go.mod h1:wuysWh3ibOyGQXDBthc4PMZKTKa/8s4RbaOtkTKOOhs=
-github.com/labstack/echo v3.3.10+incompatible h1:pGRcYk231ExFAyoAjAfD85kQzRJCRI8bbnE7CX5OEgg=
-github.com/labstack/echo v3.3.10+incompatible/go.mod h1:0INS7j/VjnFxD4E2wkz67b8cVwCLbBmJyDaka6Cmk1s=
-github.com/labstack/echo/v4 v4.1.13 h1:JYgKq6NQQSaKbQcsOadAKX1kUVLCUzLGwu8sxN5tC34=
-github.com/labstack/echo/v4 v4.1.13/go.mod h1:3WZNypykZ3tnqpF2Qb4fPg27XDunFqgP3HGDmCMgv7U=
 github.com/labstack/echo/v4 v4.1.14 h1:h8XP66UfB3tUm+L3QPw7tmwAu3pJaA/nyfHPCcz46ic=
 github.com/labstack/echo/v4 v4.1.14/go.mod h1:Q5KZ1vD3V5FEzjM79hjwVrC3ABr7F5IdM23bXQMRDGg=
 github.com/labstack/gommon v0.3.0 h1:JEeO0bvc78PKdyHxloTKiF8BD5iGrH8T6MSeGvSgob0=
