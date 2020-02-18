@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 (2020/02/18)
+
+* Bump deps
+
 ## 1.2.0 (2020/01/02) 
 
 * Update URL of GeoLite2-Country.mmdb (jpillora/ipfilter#11)

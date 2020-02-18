@@ -41,22 +41,20 @@ func Middleware() echo.MiddlewareFunc {
 // MiddlewareWithConfig returns an IPFilter middleware with config.
 // See: `IPFilter()`.
 func MiddlewareWithConfig(config Config) echo.MiddlewareFunc {
+	var err error
+
 	// Defaults
 	if config.Skipper == nil {
 		config.Skipper = DefaultConfig.Skipper
 	}
 
 	// New jpillora/ipfilter instance
-	f, err := ipfilter.New(ipfilter.Options{
+	filter := ipfilter.New(ipfilter.Options{
 		AllowedIPs:     config.WhiteList,
 		BlockedIPs:     config.BlackList,
 		BlockByDefault: config.BlockByDefault,
 		Logger:         nil,
-		IPDBFetchURL:   "https://web.archive.org/web/20191227182209if_/https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz",
 	})
-	if err != nil {
-		panic(err)
-	}
 
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
@@ -70,7 +68,7 @@ func MiddlewareWithConfig(config Config) echo.MiddlewareFunc {
 					return echo.NewHTTPError(http.StatusBadRequest, err.Error())
 				}
 			}
-			if !f.Allowed(ip) {
+			if !filter.Allowed(ip) {
 				return echo.NewHTTPError(http.StatusForbidden, fmt.Sprintf("IP address %s not allowed", ip))
 			}
 			return next(c)
