@@ -4,6 +4,8 @@ github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumC
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/jpillora/ipfilter v1.1.0 h1:3eZkss+GxpIZIcER6uyf08Knd7YBzkz7Y9bc8dy9NHo=
 github.com/jpillora/ipfilter v1.1.0/go.mod h1:B1/L0Go28JK2UD/qUkmoMNN8akI+XK26b2ZB7PaV1I8=
+github.com/jpillora/ipfilter v1.2.1 h1:K5zGPjyjgf2MPB+iTULZ7Hl4zXPWOb4JwgxMdogKq20=
+github.com/jpillora/ipfilter v1.2.1/go.mod h1:B1/L0Go28JK2UD/qUkmoMNN8akI+XK26b2ZB7PaV1I8=
 github.com/labstack/echo/v4 v4.1.14 h1:h8XP66UfB3tUm+L3QPw7tmwAu3pJaA/nyfHPCcz46ic=
 github.com/labstack/echo/v4 v4.1.14/go.mod h1:Q5KZ1vD3V5FEzjM79hjwVrC3ABr7F5IdM23bXQMRDGg=
 github.com/labstack/gommon v0.3.0 h1:JEeO0bvc78PKdyHxloTKiF8BD5iGrH8T6MSeGvSgob0=

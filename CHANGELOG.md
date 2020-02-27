@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0 (2020/02/27)
+
+* Bump deps
+
 ## 1.3.0 (2020/02/18)
 
 * Bump deps
