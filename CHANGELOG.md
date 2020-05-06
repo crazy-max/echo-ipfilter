@@ -1,12 +1,17 @@
 # Changelog
 
+## 1.5.0 (2020/05/06)
+
+* Go 1.14 support
+* Update deps
+
 ## 1.4.0 (2020/02/27)
 
-* Bump deps
+* Update deps
 
 ## 1.3.0 (2020/02/18)
 
-* Bump deps
+* Update deps
 
 ## 1.2.0 (2020/01/02) 
 
