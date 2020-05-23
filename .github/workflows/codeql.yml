@@ -1,12 +1,8 @@
-name: test
+name: codeql
 
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/build.yml'
-      - 'go.mod'
-      - 'go.sum'
-      - '*.go'
+  schedule:
+    - cron: '0 0 * * 0'
   push:
     paths:
       - '.github/workflows/build.yml'
@@ -15,7 +11,7 @@ on:
       - '*.go'
 
 jobs:
-  test:
+  codeql:
     runs-on: ubuntu-latest
     env:
       GO111MODULE: on
@@ -33,6 +29,11 @@ jobs:
         name: Checkout
         uses: actions/checkout@v2
       -
+        name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: go
+      -
         name: Set up Go
         uses: actions/setup-go@v2
         with:
@@ -48,11 +49,7 @@ jobs:
       -
         name: Test
         run: |
-          go test -coverprofile=coverage.txt -covermode=atomic ./...
+          go test ./...
       -
-        name: Upload coverage
-        uses: codecov/codecov-action@v1
-        if: success()
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.txt
+        name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
