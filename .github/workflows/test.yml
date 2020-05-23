@@ -3,13 +3,13 @@ name: test
 on:
   pull_request:
     paths:
-      - '.github/workflows/build.yml'
+      - '.github/workflows/test.yml'
       - 'go.mod'
       - 'go.sum'
       - '*.go'
   push:
     paths:
-      - '.github/workflows/build.yml'
+      - '.github/workflows/test.yml'
       - 'go.mod'
       - 'go.sum'
       - '*.go'
