@@ -2,8 +2,6 @@ github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumCAMpl/TFQ4/5kLM=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
-github.com/jpillora/ipfilter v1.2.1 h1:K5zGPjyjgf2MPB+iTULZ7Hl4zXPWOb4JwgxMdogKq20=
-github.com/jpillora/ipfilter v1.2.1/go.mod h1:B1/L0Go28JK2UD/qUkmoMNN8akI+XK26b2ZB7PaV1I8=
 github.com/jpillora/ipfilter v1.2.2 h1:lfENG7V1/T+ZutAtSbt6gssvzj3Ql0JmcFlqS/BES2E=
 github.com/jpillora/ipfilter v1.2.2/go.mod h1:xvAYjA+48eM9E5+sg9yI55N5lE9sefckjsnDvSiEA+g=
 github.com/labstack/echo/v4 v4.1.16 h1:8swiwjE5Jkai3RPfZoahp8kjVCRNq+y7Q0hPji2Kz0o=
@@ -17,8 +15,6 @@ github.com/mattn/go-isatty v0.0.8/go.mod h1:Iq45c/XA43vh69/j3iqttzPXn0bhXyGjM0Hd
 github.com/mattn/go-isatty v0.0.9/go.mod h1:YNRxwqDuOph6SZLI9vUUz6OYw3QyUt7WiY2yME+cCiQ=
 github.com/mattn/go-isatty v0.0.12 h1:wuysRhFDzyxgEmMf5xjvJ2M9dZoWAXNNr5LSBS7uHXY=
 github.com/mattn/go-isatty v0.0.12/go.mod h1:cbi8OIDigv2wuxKPP5vlRcQ1OAZbq2CE4Kysco4FUpU=
-github.com/phuslu/geoip v1.0.20200217 h1:pap5n0dO6f2HUOXKGW0OrG0Y9OlxN0uC+XKMvziUm6g=
-github.com/phuslu/geoip v1.0.20200217/go.mod h1:2z3izHYc+bwW7j5pyvtXG8N+I9Q87XnZfULO6lN9NhA=
 github.com/phuslu/iploc v1.0.20200807 h1:LIBm2Y9l5zmUvnJhQgMcLZ0iVwuG+5/L6AgbMwSOpE4=
 github.com/phuslu/iploc v1.0.20200807/go.mod h1:Q/0VX0txvbxekt4NhWIi3Q3eyZ139lHhnlzvDxyXhuc=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
