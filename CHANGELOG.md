@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.6.0 (2020/08/15)
+
+* Go 1.15 support
+* Update deps
+
 ## 1.5.0 (2020/05/06)
 
 * Go 1.14 support
