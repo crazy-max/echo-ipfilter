@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO111MODULE: on
-      GOPROXY: https://goproxy.io,direct
     strategy:
       fail-fast: false
       matrix:
