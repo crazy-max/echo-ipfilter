@@ -31,7 +31,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2
       -
         name: Set up Go
         uses: actions/setup-go@v2
@@ -51,7 +51,7 @@ jobs:
           go test -coverprofile=coverage.txt -covermode=atomic ./...
       -
         name: Upload coverage
-        uses: codecov/codecov-action@v1.0.14
+        uses: codecov/codecov-action@v1
         if: success()
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
