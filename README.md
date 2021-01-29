@@ -1,4 +1,4 @@
-<p align="center"><img width="156" src="https://raw.githubusercontent.com/crazy-max/echo-ipfilter/master/.res/echo-ipfilter.png"></p>
+<p align="center"><img width="156" src="https://raw.githubusercontent.com/crazy-max/echo-ipfilter/master/.github/echo-ipfilter.png"></p>
 
 <p align="center">
   <a href="https://github.com/crazy-max/echo-ipfilter/actions?workflow=test"><img src="https://img.shields.io/github/workflow/status/crazy-max/echo-ipfilter/test?label=test&logo=github&style=flat-square" alt="Test workflow"></a>
