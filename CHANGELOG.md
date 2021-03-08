@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.0 (2021/03/08)
+
+* Go 1.16 support
+* Bump github.com/labstack/echo/v4 from 4.1.16 to 4.1.21 (#24 #32)
+* Bump github.com/stretchr/testify from 1.6.1 to 1.7.0 (#29)
+
 ## 1.6.0 (2020/08/15)
 
 * Go 1.15 support
