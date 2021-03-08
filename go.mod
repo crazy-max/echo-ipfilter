@@ -1,6 +1,6 @@
 module github.com/crazy-max/echo-ipfilter
 
-go 1.15
+go 1.13
 
 require (
 	github.com/jpillora/ipfilter v1.2.2
