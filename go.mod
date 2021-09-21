@@ -4,6 +4,6 @@ go 1.13
 
 require (
 	github.com/jpillora/ipfilter v1.2.2
-	github.com/labstack/echo/v4 v4.5.0
+	github.com/labstack/echo/v4 v4.6.0
 	github.com/stretchr/testify v1.7.0
 )
