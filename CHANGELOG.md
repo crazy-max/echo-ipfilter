@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.8.0 (2021/10/03)
+
+* Go 1.16 required (#46)
+* Go 1.17 support (#42)
+* Bump github.com/jpillora/ipfilter from 1.2.2 to 1.2.3 (#43)
+* Bump github.com/labstack/echo/v4 from 4.2.1 to 4.6.1 (#34 #41 #44 #45)
+* Bump codecov/codecov-action from 1 to 2
+
 ## 1.7.0 (2021/03/08)
 
 * Go 1.16 support
