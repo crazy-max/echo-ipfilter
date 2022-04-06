@@ -48,7 +48,7 @@ jobs:
           go test -coverprofile=coverage.txt -covermode=atomic ./...
       -
         name: Upload coverage
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         if: success()
         with:
           file: ./coverage.txt
