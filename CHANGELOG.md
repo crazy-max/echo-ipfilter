@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.9.0 (2022/07/16)
+
+* Go 1.18 support
+* Bump github.com/labstack/echo/v4 from 4.6.1 to 4.7.2 (#48 #51 #54)
+* Bump github.com/jpillora/ipfilter from 1.2.3 to 1.2.6 (#62)
+* Bump github.com/stretchr/testify from 1.7.0 to 1.8.0 (#66)
+
 ## 1.8.0 (2021/10/03)
 
 * Go 1.16 required (#46)
