@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.10.0 (2023/05/05)
+
+* Go 1.20 support (#72 #82)
+* Bump github.com/labstack/echo/v4 from 4.7.2 to 4.10.2 (#71 #78)
+* Bump github.com/jpillora/ipfilter from 1.2.6 to 1.2.9 (#70 #76)
+
 ## 1.9.0 (2022/07/16)
 
 * Go 1.18 support
