@@ -1,7 +1,7 @@
 <p align="center"><img width="156" src="https://raw.githubusercontent.com/crazy-max/echo-ipfilter/master/.github/echo-ipfilter.png"></p>
 
 <p align="center">
-  <a href="https://github.com/crazy-max/echo-ipfilter/actions?workflow=test"><img src="https://img.shields.io/github/workflow/status/crazy-max/echo-ipfilter/test?label=test&logo=github&style=flat-square" alt="Test workflow"></a>
+  <a href="https://github.com/crazy-max/echo-ipfilter/actions?workflow=test"><img src="https://img.shields.io/github/actions/workflow/status/crazy-max/echo-ipfilter/test.yml?label=test&logo=github&style=flat-square" alt="Test workflow"></a>
   <a href="https://goreportcard.com/report/github.com/crazy-max/echo-ipfilter"><img src="https://goreportcard.com/badge/github.com/crazy-max/echo-ipfilter?style=flat-square" alt="Go Report"></a>
   <a href="https://codecov.io/gh/crazy-max/echo-ipfilter"><img src="https://img.shields.io/codecov/c/github/crazy-max/echo-ipfilter?logo=codecov&style=flat-square" alt="Codecov"></a>
   <br /><a href="https://github.com/sponsors/crazy-max"><img src="https://img.shields.io/badge/sponsor-crazy--max-181717.svg?logo=github&style=flat-square" alt="Become a sponsor"></a>
