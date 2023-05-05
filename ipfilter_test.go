@@ -8,13 +8,10 @@ import (
 
 	ipfilter "github.com/crazy-max/echo-ipfilter"
 	"github.com/labstack/echo/v4"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestMiddleware(t *testing.T) {
-	a := assert.New(t)
 	e := echo.New()
-
 	req := httptest.NewRequest(http.MethodGet, "/", nil)
 	req.RemoteAddr = "10.0.0.1"
 	res := httptest.NewRecorder()
@@ -22,51 +19,53 @@ func TestMiddleware(t *testing.T) {
 	h := ipfilter.Middleware()(func(c echo.Context) error {
 		return c.NoContent(http.StatusOK)
 	})
-
-	a.Error(h(c))
+	if err := h(c); err == nil {
+		t.Error("expected error, got nil")
+	}
 }
 
 func TestMiddlewareWithConfig(t *testing.T) {
-	a := assert.New(t)
-
-	testTable := []struct {
-		Config ipfilter.Config
-		Ip     string
-		Expect error
+	cases := []struct {
+		name   string
+		config ipfilter.Config
+		ip     string
+		err    error
 	}{
 		{
-			Config: ipfilter.Config{
+			name: "blocked with whitelist",
+			config: ipfilter.Config{
 				WhiteList: []string{
 					"123.123.123.123",
 				},
 				BlockByDefault: true,
 			},
-			Ip: "223.123.123.123:1234",
-			// Blocked by WhiteList.
-			Expect: echo.NewHTTPError(http.StatusForbidden, fmt.Sprintf("IP address %s not allowed", "223.123.123.123")),
+			ip:  "223.123.123.123:1234",
+			err: echo.NewHTTPError(http.StatusForbidden, fmt.Sprintf("IP address %s not allowed", "223.123.123.123")),
 		},
 		{
-			Config: ipfilter.Config{
+			name: "not blocked",
+			config: ipfilter.Config{
 				WhiteList: []string{
 					"223.123.123.123",
 				},
 			},
-			Ip: "223.123.123.123:1234",
+			ip: "223.123.123.123:1234",
 			// Not blocked.
-			Expect: nil,
+			err: nil,
 		},
 		{
-			Config: ipfilter.Config{
+			name: "not blocked cidr",
+			config: ipfilter.Config{
 				WhiteList: []string{
 					"223.123.123.0/24",
 				},
 			},
-			Ip: "223.123.123.230:1234",
-			// Not blocked.
-			Expect: nil,
+			ip:  "223.123.123.230:1234",
+			err: nil,
 		},
 		{
-			Config: ipfilter.Config{
+			name: "blocked by blacklist",
+			config: ipfilter.Config{
 				WhiteList: []string{
 					"223.123.123.0/24",
 				},
@@ -74,47 +73,51 @@ func TestMiddlewareWithConfig(t *testing.T) {
 					"223.123.123.230",
 				},
 			},
-			Ip: "223.123.123.230:1234",
-			// Blocked by BlackList.
-			Expect: echo.NewHTTPError(http.StatusForbidden, fmt.Sprintf("IP address %s not allowed", "223.123.123.230")),
+			ip:  "223.123.123.230:1234",
+			err: echo.NewHTTPError(http.StatusForbidden, fmt.Sprintf("IP address %s not allowed", "223.123.123.230")),
 		},
 		{
-			// It will be DefaultIpFilterConfig.
-			Config: ipfilter.Config{},
-			// Allowed by default WhiteList.
-			Ip:     "123.123.123.123:1234",
-			Expect: nil,
+			name:   "allowed by default whitelist",
+			config: ipfilter.Config{},
+			ip:     "123.123.123.123:1234",
+			err:    nil,
 		},
 		{
-			Config: ipfilter.Config{
+			name: "allowed by whitelist",
+			config: ipfilter.Config{
 				WhiteList: []string{
 					"10.1.2.0/24",
 					"10.1.4.0/24",
 				},
 				BlockByDefault: true,
 			},
-			Ip: "10.1.4.1:80",
-			// Allowed by WhiteList.
-			Expect: nil,
+			ip:  "10.1.4.1:80",
+			err: nil,
 		},
 	}
 
-	e := echo.New()
+	for _, tt := range cases {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			e := echo.New()
+			req := httptest.NewRequest(http.MethodGet, "/", nil)
+			req.RemoteAddr = tt.ip
+			res := httptest.NewRecorder()
+			c := e.NewContext(req, res)
+			h := ipfilter.MiddlewareWithConfig(tt.config)(func(c echo.Context) error {
+				return c.NoContent(http.StatusOK)
+			})
 
-	for idx, testCase := range testTable {
-		req := httptest.NewRequest(http.MethodGet, "/", nil)
-		req.RemoteAddr = testCase.Ip
-		res := httptest.NewRecorder()
-		c := e.NewContext(req, res)
-		h := ipfilter.MiddlewareWithConfig(testCase.Config)(func(c echo.Context) error {
-			return c.NoContent(http.StatusOK)
+			switch err := h(c); err.(type) {
+			case nil:
+				if tt.err != nil {
+					t.Errorf("expected error %v, got nil", tt.err)
+				}
+			case *echo.HTTPError:
+				if tt.err.Error() != err.Error() {
+					t.Errorf("expected error %v, got %v", tt.err, err)
+				}
+			}
 		})
-
-		switch err := h(c); err.(type) {
-		case nil:
-			a.EqualValues(testCase.Expect, err, "testTable[%d]", idx)
-		case *echo.HTTPError:
-			a.EqualValues(testCase.Expect, err, "testTable[%d]", idx)
-		}
 	}
 }
