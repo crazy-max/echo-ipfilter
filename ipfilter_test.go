@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	ipfilter "github.com/crazy-max/echo-ipfilter"
+	jpillorafilter "github.com/jpillora/ipfilter"
 	"github.com/labstack/echo/v4"
 )
 
@@ -93,6 +94,36 @@ func TestMiddlewareWithConfig(t *testing.T) {
 			},
 			ip:  "10.1.4.1:80",
 			err: nil,
+		},
+		{
+			name: "dynamically allowed by whitelist",
+			config: ipfilter.Config{
+				WhiteList: []string{
+					"10.1.2.0/24",
+					// this will be dynamically added "10.1.4.0/24",
+				},
+				BlockByDefault: true,
+				CreatedFilter: func(filter *jpillorafilter.IPFilter) {
+					filter.AllowIP("10.1.4.0/24")
+				},
+			},
+			ip:  "10.1.4.1:80",
+			err: nil,
+		},
+		{
+			name: "dynamically allowed by whitelist",
+			config: ipfilter.Config{
+				WhiteList: []string{
+					"10.1.2.0/24", // will be dynamicaly blocked
+					"10.1.4.0/24",
+				},
+				BlockByDefault: true,
+				CreatedFilter: func(filter *jpillorafilter.IPFilter) {
+					filter.BlockIP("10.1.2.0/24")
+				},
+			},
+			ip:  "10.1.2.7:80",
+			err: echo.NewHTTPError(http.StatusForbidden, fmt.Sprintf("IP address %s not allowed", "10.1.2.7")),
 		},
 	}
 
