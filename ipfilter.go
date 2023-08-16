@@ -24,6 +24,11 @@ type Config struct {
 
 	// Block by default.
 	BlockByDefault bool
+
+	// called with the newly created filter object to allow for
+	// controlling the filter during runtime.
+	// The underlying filter implementation is thankfully threadsafe
+	CreatedFilter func(*ipfilter.IPFilter)
 }
 
 // DefaultConfig is the default IPFilter middleware config
@@ -55,7 +60,9 @@ func MiddlewareWithConfig(config Config) echo.MiddlewareFunc {
 		BlockByDefault: config.BlockByDefault,
 		Logger:         nil,
 	})
-
+	if config.CreatedFilter != nil {
+		config.CreatedFilter(filter)
+	}
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
 			if config.Skipper(c) {
