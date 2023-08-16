@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.11.0 (2023/08/16)
+
+* Add filter callback (#85)
+* Go 1.21 (#86)
+* Bump github.com/labstack/echo/v4 from 4.10.2 to 4.11.1 (#84)
+
 ## 1.10.0 (2023/05/05)
 
 * Go 1.20 support (#72 #82)
