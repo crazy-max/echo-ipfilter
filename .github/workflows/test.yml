@@ -21,6 +21,18 @@ env:
   DOCKER_BUILD_SUMMARY: false
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v4
+      -
+        name: Lint
+        uses: docker/bake-action@v5
+        with:
+          targets: lint
+
   test:
     runs-on: ubuntu-latest
     env:

@@ -17,3 +17,8 @@ target "test" {
     GO_VERSION = GO_VERSION
   }
 }
+
+target "lint" {
+  target = "lint"
+  output = ["type=cacheonly"]
+}
