@@ -114,7 +114,7 @@ func TestMiddlewareWithConfig(t *testing.T) {
 			name: "dynamically allowed by whitelist",
 			config: ipfilter.Config{
 				WhiteList: []string{
-					"10.1.2.0/24", // will be dynamicaly blocked
+					"10.1.2.0/24", // will be dynamically blocked
 					"10.1.4.0/24",
 				},
 				BlockByDefault: true,
