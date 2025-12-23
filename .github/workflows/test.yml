@@ -29,11 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Checkout
-        uses: actions/checkout@v4
-      -
         name: Lint
-        uses: docker/bake-action@v5
+        uses: docker/bake-action@v6
         with:
           targets: lint
 
@@ -50,13 +47,8 @@ jobs:
           - "1.23"
     steps:
       -
-        name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      -
         name: Test
-        uses: docker/bake-action@v5
+        uses: docker/bake-action@v6
         with:
           targets: test
         env:
