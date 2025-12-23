@@ -42,9 +42,8 @@ jobs:
       fail-fast: false
       matrix:
         go:
-          - "1.21"
-          - "1.22"
-          - "1.23"
+          - "1.24"
+          - "1.25"
     steps:
       -
         name: Checkout
@@ -61,7 +60,7 @@ jobs:
           GO_VERSION: ${{ matrix.go }}
       -
         name: Upload coverage
-        if: ${{ matrix.go == '1.23' }}
+        if: ${{ matrix.go == '1.25' }}
         uses: codecov/codecov-action@v5
         with:
           directory: ${{ env.DESTDIR }}/coverage
