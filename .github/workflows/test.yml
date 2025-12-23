@@ -47,14 +47,21 @@ jobs:
           - "1.23"
     steps:
       -
+        name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      -
         name: Test
         uses: docker/bake-action@v6
         with:
+          source: .
           targets: test
         env:
           GO_VERSION: ${{ matrix.go }}
       -
         name: Upload coverage
+        if: ${{ matrix.go == '1.23' }}
         uses: codecov/codecov-action@v5
         with:
           directory: ${{ env.DESTDIR }}/coverage
