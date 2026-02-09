@@ -3,7 +3,7 @@ module github.com/crazy-max/echo-ipfilter
 go 1.24.0
 
 require (
-	github.com/jpillora/ipfilter v1.2.9
+	github.com/jpillora/ipfilter v1.3.0
 	github.com/labstack/echo/v4 v4.14.0
 )
 
@@ -11,7 +11,6 @@ require (
 	github.com/labstack/gommon v0.4.2 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
-	github.com/phuslu/iploc v1.0.20230201 // indirect
 	github.com/tomasen/realip v0.0.0-20180522021738-f0c99a92ddce // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.2 // indirect
