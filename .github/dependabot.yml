@@ -11,6 +11,10 @@ updates:
       - "bot"
   - package-ecosystem: "github-actions"
     directory: "/"
+    groups:
+      codeql-actions:
+        patterns:
+          - "github/codeql-action/*"
     schedule:
       interval: "daily"
     cooldown:
