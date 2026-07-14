@@ -3,7 +3,7 @@ module github.com/crazy-max/echo-ipfilter
 go 1.24.0
 
 require (
-	github.com/jpillora/ipfilter v1.4.0
+	github.com/jpillora/ipfilter v1.4.1
 	github.com/labstack/echo/v4 v4.14.0
 )
 
